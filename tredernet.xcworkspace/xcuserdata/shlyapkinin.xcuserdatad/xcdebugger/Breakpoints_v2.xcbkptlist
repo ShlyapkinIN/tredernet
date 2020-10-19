@@ -30,58 +30,10 @@
             filePath = "tredernet/ViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "102"
-            endingLineNumber = "102"
+            startingLineNumber = "108"
+            endingLineNumber = "108"
             landmarkName = "tableView(_:didSelectRowAt:)"
             landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "4889B59C-44AA-456D-A6D0-F285D1C7F908"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "tredernet/StockCell.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "107"
-            endingLineNumber = "107"
-            landmarkName = "setupCell(with:)"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "4889B59C-44AA-456D-A6D0-F285D1C7F908 - 5e93c3a0123ea888"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "tredernet.StockCell.setupCell(with: tredernet.StockViewModel) -&gt; ()"
-                  moduleName = "tredernet"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/shlyapkinin/Desktop/tests/tredernet/tredernet/StockCell.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "107"
-                  endingLineNumber = "107"
-                  offsetFromSymbolStart = "864">
-               </Location>
-               <Location
-                  uuid = "4889B59C-44AA-456D-A6D0-F285D1C7F908 - 1a3d7f02e240b55"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (Swift.Result&lt;Kingfisher.RetrieveImageResult, Kingfisher.KingfisherError&gt;) -&gt; () in tredernet.StockCell.setupCell(with: tredernet.StockViewModel) -&gt; ()"
-                  moduleName = "tredernet"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/shlyapkinin/Desktop/tests/tredernet/tredernet/StockCell.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "108"
-                  endingLineNumber = "108"
-                  offsetFromSymbolStart = "144">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -94,58 +46,10 @@
             filePath = "tredernet/StockCell.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "120"
-            endingLineNumber = "120"
+            startingLineNumber = "124"
+            endingLineNumber = "124"
             landmarkName = "setupCell(with:)"
             landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "187337FD-470B-4118-8940-9BF2CC926B50"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "tredernet/StockCell.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "109"
-            endingLineNumber = "109"
-            landmarkName = "setupCell(with:)"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "187337FD-470B-4118-8940-9BF2CC926B50 - 1a3d7f02e240bb4"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (Swift.Result&lt;Kingfisher.RetrieveImageResult, Kingfisher.KingfisherError&gt;) -&gt; () in tredernet.StockCell.setupCell(with: tredernet.StockViewModel) -&gt; ()"
-                  moduleName = "tredernet"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/shlyapkinin/Desktop/tests/tredernet/tredernet/StockCell.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "109"
-                  endingLineNumber = "109"
-                  offsetFromSymbolStart = "164">
-               </Location>
-               <Location
-                  uuid = "187337FD-470B-4118-8940-9BF2CC926B50 - 1a3d7f02e240bb4"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (Swift.Result&lt;Kingfisher.RetrieveImageResult, Kingfisher.KingfisherError&gt;) -&gt; () in tredernet.StockCell.setupCell(with: tredernet.StockViewModel) -&gt; ()"
-                  moduleName = "tredernet"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/shlyapkinin/Desktop/tests/tredernet/tredernet/StockCell.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "109"
-                  endingLineNumber = "109"
-                  offsetFromSymbolStart = "188">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

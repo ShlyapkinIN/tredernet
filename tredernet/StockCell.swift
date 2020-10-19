@@ -43,7 +43,7 @@ final class StockCell: UITableViewCell {
 	private var diffProcentageContainerView: UIView = {
 		let view = UIView()
 		view.layer.cornerRadius = 8
-		view.backgroundColor = .red
+		view.backgroundColor = .clear
 		view.translatesAutoresizingMaskIntoConstraints = false
 		return view
 	}()
@@ -57,6 +57,8 @@ final class StockCell: UITableViewCell {
 		label.textAlignment = .right
 		return label
 	}()
+
+	private var tikerLabelConstaint: NSLayoutConstraint?
 
 	override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
 		super.init(style: style, reuseIdentifier: reuseIdentifier)
@@ -74,6 +76,9 @@ final class StockCell: UITableViewCell {
 		contentView.addSubview(closeSessionDiffProcentageLabel)
 		contentView.addSubview(lastPriceLabel)
 
+		tikerLabelConstaint = tikerLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 16)
+		tikerLabelConstaint?.isActive = true
+
 		NSLayoutConstraint.activate([
 			tikerImageView.heightAnchor.constraint(equalToConstant: 16),
 			tikerImageView.widthAnchor.constraint(equalToConstant: 16),
@@ -81,7 +86,6 @@ final class StockCell: UITableViewCell {
 			tikerImageView.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 12),
 
 			tikerLabel.centerYAnchor.constraint(equalTo: tikerImageView.centerYAnchor),
-			tikerLabel.leadingAnchor.constraint(equalTo: tikerImageView.trailingAnchor, constant: 10),
 
 			tikerSubLabel.leadingAnchor.constraint(equalTo: tikerImageView.leadingAnchor),
 			tikerSubLabel.trailingAnchor.constraint(equalTo: lastPriceLabel.leadingAnchor),
@@ -103,21 +107,32 @@ final class StockCell: UITableViewCell {
 
 	func setupCell(with model: StockViewModel) {
 
-		if let tiker = model.tiker?.lowercased(), let url = URL(string: "https://tradernet.ru/logos/get-logo-by-ticker?ticker=\(tiker)") {
-			tikerImageView.kf.setImage(with: url) { result in
+		if let url = URL(string: "https://tradernet.ru/logos/get-logo-by-ticker?ticker=\(model.titleText.lowercased())") {
+			tikerImageView.kf.setImage(with: url, completionHandler:  { result in
 				switch result {
 				case .success(let image):
-					print(image)
+					let imgData = image.image.pngData() ?? Data()
+					self.tikerLabelConstaint?.constant = imgData.count < 100 ? 16 : 40
 				case .failure: break
 				}
-			}
+			})
 		}
 
-		tikerLabel.text = model.tiker
-		tikerSubLabel.text = "\(model.lastStockExchange ?? "") | \(model.name ?? "")"
-		closeSessionDiffProcentageLabel.text = "\(model.closeSessionDiffProcentage ?? 0)%"
+		tikerLabel.text = model.titleText
+		tikerSubLabel.text = model.subtitleText
+		closeSessionDiffProcentageLabel.text = model.priceProcentageText
+		lastPriceLabel.text = model.lastPriceText
 
-		lastPriceLabel.text = "\(model.lastPrice ?? 0) ( \(model.lastDealDiffPrice ?? 0) )"
+		if model.isNeedAnimation {
+			closeSessionDiffProcentageLabel.textColor = .white
+			diffProcentageContainerView.backgroundColor = model.isMoreZero ? .green : .red
 
+			DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) {
+				self.closeSessionDiffProcentageLabel.textColor = model.isMoreZero ? .green : .red
+				self.diffProcentageContainerView.backgroundColor = .clear
+			}
+		} else {
+			self.closeSessionDiffProcentageLabel.textColor = model.isMoreZero ? .green : .red
+		}
 	}
 }
