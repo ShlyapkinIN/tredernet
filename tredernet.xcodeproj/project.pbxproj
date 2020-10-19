@@ -3,23 +3,35 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		36483F23253C812F00FE624F /* TikerResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36483F22253C812F00FE624F /* TikerResponse.swift */; };
+		36483F28253C85CD00FE624F /* Response.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36483F27253C85CD00FE624F /* Response.swift */; };
+		36483F2D253C936700FE624F /* StockCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36483F2C253C936700FE624F /* StockCell.swift */; };
+		36483F39253CBD3D00FE624F /* StockViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36483F38253CBD3C00FE624F /* StockViewModel.swift */; };
 		36F1CB2F253C692200657FA6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36F1CB2E253C692200657FA6 /* AppDelegate.swift */; };
 		36F1CB33253C692200657FA6 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36F1CB32253C692200657FA6 /* ViewController.swift */; };
 		36F1CB38253C692B00657FA6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 36F1CB37253C692B00657FA6 /* Assets.xcassets */; };
 		36F1CB3B253C692B00657FA6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 36F1CB39253C692B00657FA6 /* LaunchScreen.storyboard */; };
+		CA961CD3272B4AFF916ACD05 /* Pods_tredernet.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7EF13BD2036C2B5CAE7BCA0B /* Pods_tredernet.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		325E77CAE96A819D3BFA1439 /* Pods-tredernet.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-tredernet.debug.xcconfig"; path = "Target Support Files/Pods-tredernet/Pods-tredernet.debug.xcconfig"; sourceTree = "<group>"; };
+		36483F22253C812F00FE624F /* TikerResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TikerResponse.swift; sourceTree = "<group>"; };
+		36483F27253C85CD00FE624F /* Response.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Response.swift; sourceTree = "<group>"; };
+		36483F2C253C936700FE624F /* StockCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockCell.swift; sourceTree = "<group>"; };
+		36483F38253CBD3C00FE624F /* StockViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockViewModel.swift; sourceTree = "<group>"; };
 		36F1CB2B253C692200657FA6 /* tredernet.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = tredernet.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		36F1CB2E253C692200657FA6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		36F1CB32253C692200657FA6 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		36F1CB37253C692B00657FA6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		36F1CB3A253C692B00657FA6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		36F1CB3C253C692B00657FA6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7EF13BD2036C2B5CAE7BCA0B /* Pods_tredernet.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_tredernet.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A86ACAAA2340604EA7DAF5B6 /* Pods-tredernet.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-tredernet.release.xcconfig"; path = "Target Support Files/Pods-tredernet/Pods-tredernet.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -27,17 +39,47 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CA961CD3272B4AFF916ACD05 /* Pods_tredernet.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		21946A5A70267BF0FF90ADB9 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				7EF13BD2036C2B5CAE7BCA0B /* Pods_tredernet.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		36483F2B253C930F00FE624F /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				36F1CB32253C692200657FA6 /* ViewController.swift */,
+				36483F2C253C936700FE624F /* StockCell.swift */,
+				36483F38253CBD3C00FE624F /* StockViewModel.swift */,
+			);
+			name = UI;
+			sourceTree = "<group>";
+		};
+		36483F2F253C937300FE624F /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				36483F27253C85CD00FE624F /* Response.swift */,
+				36483F22253C812F00FE624F /* TikerResponse.swift */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
 		36F1CB22253C692200657FA6 = {
 			isa = PBXGroup;
 			children = (
 				36F1CB2D253C692200657FA6 /* tredernet */,
 				36F1CB2C253C692200657FA6 /* Products */,
+				CC27C0108892F3F7AC4C6FF0 /* Pods */,
+				21946A5A70267BF0FF90ADB9 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -52,13 +94,23 @@
 		36F1CB2D253C692200657FA6 /* tredernet */ = {
 			isa = PBXGroup;
 			children = (
+				36483F2F253C937300FE624F /* Models */,
+				36483F2B253C930F00FE624F /* UI */,
 				36F1CB2E253C692200657FA6 /* AppDelegate.swift */,
-				36F1CB32253C692200657FA6 /* ViewController.swift */,
 				36F1CB37253C692B00657FA6 /* Assets.xcassets */,
 				36F1CB39253C692B00657FA6 /* LaunchScreen.storyboard */,
 				36F1CB3C253C692B00657FA6 /* Info.plist */,
 			);
 			path = tredernet;
+			sourceTree = "<group>";
+		};
+		CC27C0108892F3F7AC4C6FF0 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				325E77CAE96A819D3BFA1439 /* Pods-tredernet.debug.xcconfig */,
+				A86ACAAA2340604EA7DAF5B6 /* Pods-tredernet.release.xcconfig */,
+			);
+			path = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -68,9 +120,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 36F1CB3F253C692B00657FA6 /* Build configuration list for PBXNativeTarget "tredernet" */;
 			buildPhases = (
+				F977365D5F19564F87F990F6 /* [CP] Check Pods Manifest.lock */,
 				36F1CB27253C692200657FA6 /* Sources */,
 				36F1CB28253C692200657FA6 /* Frameworks */,
 				36F1CB29253C692200657FA6 /* Resources */,
+				3D420765D7D5478FF1013A5A /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -125,13 +179,59 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		3D420765D7D5478FF1013A5A /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-tredernet/Pods-tredernet-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-tredernet/Pods-tredernet-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-tredernet/Pods-tredernet-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F977365D5F19564F87F990F6 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-tredernet-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		36F1CB27253C692200657FA6 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				36483F28253C85CD00FE624F /* Response.swift in Sources */,
 				36F1CB33253C692200657FA6 /* ViewController.swift in Sources */,
+				36483F23253C812F00FE624F /* TikerResponse.swift in Sources */,
+				36483F39253CBD3D00FE624F /* StockViewModel.swift in Sources */,
 				36F1CB2F253C692200657FA6 /* AppDelegate.swift in Sources */,
+				36483F2D253C936700FE624F /* StockCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -267,6 +367,7 @@
 		};
 		36F1CB40253C692B00657FA6 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 325E77CAE96A819D3BFA1439 /* Pods-tredernet.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -287,6 +388,7 @@
 		};
 		36F1CB41253C692B00657FA6 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A86ACAAA2340604EA7DAF5B6 /* Pods-tredernet.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
