@@ -8,7 +8,9 @@
 import UIKit
 import SocketIO
 
-class MainViewController: UIViewController {
+public final class MainViewController: UIViewController {
+
+	var presenter: MainPresenter?
 
 	// интерактор
 	let manager = SocketManager(socketURL: URL(string: "https://ws.tradernet.ru")!, config: [.log(true)])

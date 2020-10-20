@@ -5,8 +5,9 @@
 //  Created by Shlyapkin Ivan on 18.10.2020.
 //
 
+/// Stock cell's view model
 struct StockViewModel {
-	let tiker: String?
+	let ticker: String?
 
 	var lastStockExchange: String?
 
@@ -20,7 +21,7 @@ struct StockViewModel {
 		}
 	}
 
-	var titleText: String { self.tiker ?? "" }
+	var titleText: String { self.ticker ?? "" }
 
 	var subtitleText: String {
 		var finalSubTitle = ""
@@ -56,14 +57,13 @@ struct StockViewModel {
 
 	private let name: String?
 
-	init(tiker: String? = nil, closeSessionDiffProcentage: Double? = nil, lastStockExchange: String? = nil, name: String? = nil,
-		 lastPrice: Double? = nil, lastDealDiffPrice: Double? = nil, minStep: Double? = nil) {
-		self.tiker = tiker
-		self.name = name
-		self.lastStockExchange = lastStockExchange
-		self.lastPrice = lastPrice
-		self.lastDealDiffPrice = lastDealDiffPrice
-		self.closeSessionDiffProcentage = closeSessionDiffProcentage
+	init(model: TickerModel) {
+		self.ticker = model.ticker
+		self.name = model.name
+		self.lastStockExchange = model.lastStockExchange
+		self.lastPrice = model.lastPrice
+		self.lastDealDiffPrice = model.lastDealDiffPrice
+		self.closeSessionDiffProcentage = model.closeSessionDiffProcentage
 	}
 	
 }

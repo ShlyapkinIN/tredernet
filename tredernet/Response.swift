@@ -6,5 +6,5 @@
 //
 
 struct Response: Decodable {
-	let q: [TikerResponse]
+	let q: [TickerModel]
 }

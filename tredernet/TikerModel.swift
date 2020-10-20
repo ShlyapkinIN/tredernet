@@ -5,8 +5,8 @@
 //  Created by Shlyapkin Ivan on 18.10.2020.
 //
 
-struct TikerResponse: Decodable {
-	let tiker: String?
+struct TickerModel: Decodable {
+	let ticker: String?
 	var closeSessionDiffProcentage: Double?
 	var lastStockExchange: String?
 	let name: String?
@@ -15,7 +15,7 @@ struct TikerResponse: Decodable {
 	let minStep: Double?
 
 	enum CodingKeys: String, CodingKey {
-		case tiker = "c"
+		case ticker = "c"
 		case closeSessionDiffProcentage = "pcp"
 		case lastStockExchange = "ltr"
 		case name
@@ -26,7 +26,7 @@ struct TikerResponse: Decodable {
 
 	init(from decoder: Decoder) throws {
 		let container = try decoder.container(keyedBy: CodingKeys.self)
-		self.tiker = try? container.decode(String?.self, forKey: .tiker)
+		self.ticker = try? container.decode(String?.self, forKey: .ticker)
 		self.closeSessionDiffProcentage = try? container.decode(Double?.self, forKey: .closeSessionDiffProcentage)
 		self.lastStockExchange = try? container.decode(String?.self, forKey: .lastStockExchange)
 		self.name = try? container.decode(String?.self, forKey: .name)

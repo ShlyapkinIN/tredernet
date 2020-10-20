@@ -10,13 +10,13 @@ import Kingfisher
 
 final class StockCell: UITableViewCell {
 
-	private var tikerImageView: UIImageView = {
+	private var tickerImageView: UIImageView = {
 		let imageView = UIImageView()
 		imageView.translatesAutoresizingMaskIntoConstraints = false
 		return imageView
 	}()
 
-	private var tikerLabel: UILabel = {
+	private var tickerLabel: UILabel = {
 		let label = UILabel()
 		label.font = .systemFont(ofSize: 20)
 		label.textColor = .black
@@ -24,7 +24,7 @@ final class StockCell: UITableViewCell {
 		return label
 	}()
 
-	private var tikerSubLabel: UILabel = {
+	private var tickerSubLabel: UILabel = {
 		let label = UILabel()
 		label.font = .systemFont(ofSize: 12)
 		label.textColor = .gray
@@ -58,7 +58,7 @@ final class StockCell: UITableViewCell {
 		return label
 	}()
 
-	private var tikerLabelConstaint: NSLayoutConstraint?
+	private var tickerLabelConstaint: NSLayoutConstraint?
 
 	override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
 		super.init(style: style, reuseIdentifier: reuseIdentifier)
@@ -69,31 +69,31 @@ final class StockCell: UITableViewCell {
 	required init?(coder: NSCoder) { fatalError("init(coder:) has not been implemented") }
 
 	private func setup() {
-		contentView.addSubview(tikerImageView)
-		contentView.addSubview(tikerLabel)
-		contentView.addSubview(tikerSubLabel)
+		contentView.addSubview(tickerImageView)
+		contentView.addSubview(tickerLabel)
+		contentView.addSubview(tickerSubLabel)
 		contentView.addSubview(diffProcentageContainerView)
 		contentView.addSubview(closeSessionDiffProcentageLabel)
 		contentView.addSubview(lastPriceLabel)
 
-		tikerLabelConstaint = tikerLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 16)
-		tikerLabelConstaint?.isActive = true
+		tickerLabelConstaint = tickerLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 16)
+		tickerLabelConstaint?.isActive = true
 
 		NSLayoutConstraint.activate([
-			tikerImageView.heightAnchor.constraint(equalToConstant: 16),
-			tikerImageView.widthAnchor.constraint(equalToConstant: 16),
-			tikerImageView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 16),
-			tikerImageView.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 12),
+			tickerImageView.heightAnchor.constraint(equalToConstant: 16),
+			tickerImageView.widthAnchor.constraint(equalToConstant: 16),
+			tickerImageView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 16),
+			tickerImageView.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 12),
 
-			tikerLabel.centerYAnchor.constraint(equalTo: tikerImageView.centerYAnchor),
+			tickerLabel.centerYAnchor.constraint(equalTo: tickerImageView.centerYAnchor),
 
-			tikerSubLabel.leadingAnchor.constraint(equalTo: tikerImageView.leadingAnchor),
-			tikerSubLabel.trailingAnchor.constraint(equalTo: lastPriceLabel.leadingAnchor),
-			tikerSubLabel.topAnchor.constraint(equalTo: tikerImageView.bottomAnchor, constant: 10),
-			tikerSubLabel.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -12),
+			tickerSubLabel.leadingAnchor.constraint(equalTo: tickerImageView.leadingAnchor),
+			tickerSubLabel.trailingAnchor.constraint(equalTo: lastPriceLabel.leadingAnchor),
+			tickerSubLabel.topAnchor.constraint(equalTo: tickerImageView.bottomAnchor, constant: 10),
+			tickerSubLabel.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -12),
 
 			closeSessionDiffProcentageLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor),
-			closeSessionDiffProcentageLabel.centerYAnchor.constraint(equalTo: tikerImageView.centerYAnchor),
+			closeSessionDiffProcentageLabel.centerYAnchor.constraint(equalTo: tickerImageView.centerYAnchor),
 
 			diffProcentageContainerView.trailingAnchor.constraint(equalTo: closeSessionDiffProcentageLabel.trailingAnchor, constant: 3),
 			diffProcentageContainerView.centerYAnchor.constraint(equalTo: closeSessionDiffProcentageLabel.centerYAnchor),
@@ -101,25 +101,25 @@ final class StockCell: UITableViewCell {
 			diffProcentageContainerView.centerXAnchor.constraint(equalTo: closeSessionDiffProcentageLabel.centerXAnchor),
 
 			lastPriceLabel.trailingAnchor.constraint(equalTo: closeSessionDiffProcentageLabel.trailingAnchor),
-			lastPriceLabel.centerYAnchor.constraint(equalTo: tikerSubLabel.centerYAnchor),
+			lastPriceLabel.centerYAnchor.constraint(equalTo: tickerSubLabel.centerYAnchor),
 		])
 	}
 
 	func setupCell(with model: StockViewModel) {
 
 		if let url = URL(string: "https://tradernet.ru/logos/get-logo-by-ticker?ticker=\(model.titleText.lowercased())") {
-			tikerImageView.kf.setImage(with: url, completionHandler:  { result in
+			tickerImageView.kf.setImage(with: url, completionHandler:  { result in
 				switch result {
 				case .success(let image):
 					let imgData = image.image.pngData() ?? Data()
-					self.tikerLabelConstaint?.constant = imgData.count < 100 ? 16 : 40
+					self.tickerLabelConstaint?.constant = imgData.count < 100 ? 16 : 40
 				case .failure: break
 				}
 			})
 		}
 
-		tikerLabel.text = model.titleText
-		tikerSubLabel.text = model.subtitleText
+		tickerLabel.text = model.titleText
+		tickerSubLabel.text = model.subtitleText
 		closeSessionDiffProcentageLabel.text = model.priceProcentageText
 		lastPriceLabel.text = model.lastPriceText
 
