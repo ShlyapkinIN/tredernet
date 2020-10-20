@@ -54,13 +54,27 @@ extension MainViewController: MainViewInput {
 		guard let index = models.firstIndex(where: { $0.titleText == model.ticker }) else { return }
 
 		var currentModel = models[index]
-		currentModel.isNeedAnimation = currentModel.lastDealDiffPrice != model.lastDealDiffPrice
-		currentModel.lastPrice = model.lastPrice
-		currentModel.lastDealDiffPrice = model.lastDealDiffPrice
-		currentModel.lastStockExchange = model.lastStockExchange
-		currentModel.closeSessionDiffProcentage = model.closeSessionDiffProcentage
+		if let lastDealDiffPrice = model.lastDealDiffPrice {
+			currentModel.isNeedAnimation = currentModel.lastDealDiffPrice != lastDealDiffPrice
+		}
+
+		if let lastPrice = model.lastPrice {
+			currentModel.lastPrice = lastPrice
+		}
+
+		if let lastDealDiffPrice = model.lastDealDiffPrice {
+			currentModel.lastDealDiffPrice = lastDealDiffPrice
+		}
+
+		if let lastStockExchange = model.lastStockExchange {
+			currentModel.lastStockExchange = lastStockExchange
+		}
+
+		if let closeSessionDiffProcentage = model.closeSessionDiffProcentage {
+			currentModel.closeSessionDiffProcentage = closeSessionDiffProcentage
+		}
 		
-		if models.count <= index {
+		if models.count > index {
 			models[index] = currentModel
 		}
 

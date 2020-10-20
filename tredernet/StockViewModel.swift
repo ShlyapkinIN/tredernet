@@ -51,7 +51,10 @@ struct StockViewModel {
 		return "\(price) ( \(diffPrice) )"
 	}
 
-	var isMoreZero: Bool { (lastDealDiffPrice ?? 0) > 0 }
+	var isMoreZero: Bool {
+		guard let lastDealDiffPrice = lastDealDiffPrice else { return false }
+		return lastDealDiffPrice > 0
+	}
 
 	var isNeedAnimation: Bool = false
 

@@ -120,19 +120,28 @@ final class StockCell: UITableViewCell {
 
 		tickerLabel.text = model.titleText
 		tickerSubLabel.text = model.subtitleText
-		closeSessionDiffProcentageLabel.text = model.priceProcentageText
-		lastPriceLabel.text = model.lastPriceText
 
-		if model.isNeedAnimation {
+		if !model.priceProcentageText.isEmpty {
+			closeSessionDiffProcentageLabel.text = model.priceProcentageText
+		}
+
+		if !model.lastPriceText.isEmpty {
+			lastPriceLabel.text = model.lastPriceText
+		}
+
+		let greenColor = UIColor(red: 0, green: 0.6078, blue: 0.0392, alpha: 1)
+
+		if model.isNeedAnimation && !model.priceProcentageText.isEmpty {
+
 			closeSessionDiffProcentageLabel.textColor = .white
-			diffProcentageContainerView.backgroundColor = model.isMoreZero ? .green : .red
+			diffProcentageContainerView.backgroundColor = model.isMoreZero ? greenColor : .red
 
 			DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) {
-				self.closeSessionDiffProcentageLabel.textColor = model.isMoreZero ? .green : .red
+				self.closeSessionDiffProcentageLabel.textColor = model.isMoreZero ? greenColor : .red
 				self.diffProcentageContainerView.backgroundColor = .clear
 			}
 		} else {
-			self.closeSessionDiffProcentageLabel.textColor = model.isMoreZero ? .green : .red
+			self.closeSessionDiffProcentageLabel.textColor = model.isMoreZero ? greenColor : .red
 		}
 	}
 }
